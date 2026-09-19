@@ -31,14 +31,14 @@ class Cart:
         found = False
 
         for line in self.lines:
-            if line["item_id"] == item["item_id"]:
+            if line["item_id"] == item["id"]:
                 line["qty"] = line["qty"] + qty
                 found = True
                 break
 
         if not found:
             new_line = {
-                "item_id": item["item_id"],
+                "item_id": item["id"],
                 "name": item["name"],
                 "price": item["price"],
                 "qty": qty
